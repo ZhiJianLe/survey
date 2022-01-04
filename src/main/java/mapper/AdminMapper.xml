@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.AdminMapper">
+    <resultMap id="AdminMap" type="entity.Admin">
+        <id column="id" property="id"/>
+        <result column="account" property="account"/>
+        <result column="password" property="password"/>
+        <result column="name" property="name"/>
+        <result column="phone" property="phone"/>
+        <result column="remark" property="remark"/>
+    </resultMap>
+    
+    
+    <!--添加用户-->
+    <insert id="create" parameterType="entity.Admin" keyProperty="id" useGeneratedKeys="true">
+        insert into tb_admin(account,password,name,phone,remark) value (#{account},#{password},#{name},#{phone},#{remark})
+    </insert>
+
+    <sql id="AdminFindCirtera">
+        <where>
+            <if test="id !=null">and id=#{id}</if>
+            <if test="account !=null">and account=#{account}</if>
+            <if test="password !=null">and password=#{password}</if>
+            <if test="name !=null">and name=#{name}</if>
+            <if test="phone !=null">and phone=#{phone}</if>
+        </where>
+    </sql>
+
+    <!--删除用户-->
+    <delete id="delete">
+        delete from tb_admin
+        <include refid="AdminFindCirtera"></include>
+    </delete>
+
+    <!--查询用户个数-->
+    <select id="count" resultType="int">
+        select count(1) from tb_admin
+        <include refid="AdminFindCirtera"></include>
+    </select>
+
+    <!--按照条件查询所有用户-->
+    <select id="query" resultMap="AdminMap">
+        select * from tb_admin
+        <include refid="AdminFindCirtera"/>
+    </select>
+    <!--查询详细信息-->
+    <select id="detail" resultMap="AdminMap">
+        select * from tb_admin
+        <include refid="AdminFindCirtera"/>
+        limit 1
+    </select>
+
+
+    <!--修改用户信息-->
+    <update id="update">
+        update tb_admin
+        <include refid="AdminUpdateCirtera"/>
+        <include refid="AdminFindCirtera"/>
+    </update>
+    <sql id="AdminUpdateCirtera">
+        <set>
+            <if test="account !=null">account=#{account},</if>
+            <if test="password !=null">password=#{password},</if>
+            <if test="name !=null">name=#{name},</if>
+            <if test="phone !=null">phone=#{phone},</if>
+            <if test="remark !=null">remark=#{remark},</if>
+        </set>
+    </sql>
+</mapper>
