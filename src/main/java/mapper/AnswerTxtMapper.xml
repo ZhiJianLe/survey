@@ -11,7 +11,7 @@
 		<result column="voter" 			property="voter"/>
 	</resultMap>
  
-	<insert id="create" keyProperty="id" useGeneratedKeys="true" parameterType="com.yanzhen.entity.AnswerTxt">
+	<insert id="create" keyProperty="id" useGeneratedKeys="true" parameterType="entity.AnswerTxt">
 		insert into tb_answer_txt(
 			create_time,
 			id,

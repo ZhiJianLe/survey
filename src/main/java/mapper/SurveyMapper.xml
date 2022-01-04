@@ -20,7 +20,7 @@
 		<result column="url" 			property="url"/>
 	</resultMap>
  
-	<insert id="create" keyProperty="id" useGeneratedKeys="true" parameterType="com.yanzhen.entity.Survey">
+	<insert id="create" keyProperty="id" useGeneratedKeys="true" parameterType="entity.Survey">
 		insert into tb_survey(
 			anon,
 			bgimg,

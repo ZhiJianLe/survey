@@ -19,7 +19,7 @@
 		<result column="type" 			property="type"/>
 	</resultMap>
  
-	<insert id="create" keyProperty="id" useGeneratedKeys="true" parameterType="com.yanzhen.entity.Question">
+	<insert id="create" keyProperty="id" useGeneratedKeys="true" parameterType="entity.Question">
 		insert into tb_question(
 			check_style,
 			create_time,

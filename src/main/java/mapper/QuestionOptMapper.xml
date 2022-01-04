@@ -12,7 +12,7 @@
 		<result column="type" 			property="type"/>
 	</resultMap>
  
-	<insert id="create" keyProperty="id" useGeneratedKeys="true" parameterType="com.yanzhen.entity.QuestionOpt">
+	<insert id="create" keyProperty="id" useGeneratedKeys="true" parameterType="entity.QuestionOpt">
 		insert into tb_question_opt(
 			answer,
 			id,
