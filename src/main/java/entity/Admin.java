@@ -1,9 +1,11 @@
 package entity;
 
+import utils.Entity;
+
 /**
  * @author LZJ on 2022/1/4 9:55
  */
-public class Admin {
+public class Admin extends Entity {
     private Integer id;
     private String account;
     private String password;

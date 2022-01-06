@@ -3,7 +3,7 @@ package service;
 import entity.Admin;
 
 import java.util.List;
-import java.util.Map;
+
 
 /**
  * @author LZJ on 2022/1/4 10:02
@@ -45,4 +45,14 @@ public interface AdminService {
      * @return
      */
     public int count(Admin admin);
+
+    /**
+     * 管理员登录
+     * @param account
+     * @param password
+     * @return
+     */
+    public Admin login(String account,String password);
+
+    int deleteBatch(String ids);
 }

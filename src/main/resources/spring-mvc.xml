@@ -15,18 +15,26 @@
             http://www.springframework.org/schema/mvc
             https://www.springframework.org/schema/mvc/spring-mvc.xsd">
     <context:component-scan base-package="controller"/>
-    <bean id="charset" class="java.nio.charset.Charset" factory-method="forName">
-        <constructor-arg value="UTF_8"/>
+    <bean id="charset" class="java.nio.charset.Charset" factory-method="lookup">
+        <constructor-arg value="UTF-8"/>
     </bean>
     <!--在输入日期时进行格式转化-->
     <bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
         <property name="converters">
             <set>
-                <bean class="utils.DateConvert"/>
+                <bean class="utils.DateConvert"></bean>
             </set>
         </property>
     </bean>
 
+    <!--放行静态资源-->
+    <mvc:default-servlet-handler/>
+
+    <!--视图解析器-->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/page/"></property>
+        <property name="suffix" value=".jsp"></property>
+    </bean>
 
     <mvc:annotation-driven conversion-service="conversionService">
         <mvc:message-converters>

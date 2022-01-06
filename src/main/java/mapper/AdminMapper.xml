@@ -3,6 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="mapper.AdminMapper">
+
     <resultMap id="AdminMap" type="entity.Admin">
         <id column="id" property="id"/>
         <result column="account" property="account"/>
@@ -55,6 +56,7 @@
         select * from tb_admin
         <include refid="AdminFindCriteria"/>
     </select>
+
     <!--查询详细信息-->
     <select id="detail" resultMap="AdminMap">
         select * from tb_admin

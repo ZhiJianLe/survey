@@ -32,7 +32,7 @@ public class MapParameter {
     }
 
     public MapParameter add(String key,Object val){
-       return this.put(key,val);
+        return this.put(key,val);
     }
 
     public MapParameter addId(Object val){
