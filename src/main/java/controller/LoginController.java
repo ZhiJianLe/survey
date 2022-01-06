@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import service.AdminService;
 import utils.MD5Utils;
 import utils.MapControl;
+import utils.SessionUtils;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -39,8 +40,7 @@ public class LoginController {
         String str=MD5Utils.getMD5(password);
         Admin admin = adminService.login(account,str);
         if(admin != null){
-            HttpSession session=request.getSession();
-            session.setAttribute("admin",admin);
+            SessionUtils.setAdmin(request,admin);
             return MapControl.getInstance().success().getMap();
         }else{
             return MapControl.getInstance().error("用户名或密码错误").getMap();

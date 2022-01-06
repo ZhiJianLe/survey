@@ -102,7 +102,7 @@
         var index=parent.layer.getFrameIndex(window.name);//获取窗口索引
         form.on('submit(demo1)', function (data) {
             $.ajax({
-                url:'create',
+                url:'update',
                 type:'POST',
                 contentType:'application/json',
                 dataType:'json',

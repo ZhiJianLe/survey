@@ -1,7 +1,7 @@
 {
   "homeInfo": {
     "title": "首页",
-    "href": "page/welcome-1.html?t=1"
+    "href": "survey/list"
   },
   "logoInfo": {
     "title": "调查问卷管理",
@@ -17,29 +17,9 @@
       "child": [
         {
           "title": "问卷管理",
-          "href": "",
+          "href": "survey/list",
           "icon": "fa fa-home",
-          "target": "_self",
-          "child": [
-            {
-              "title": "表单页面",
-              "href": "add.html",
-              "icon": "fa fa-tachometer",
-              "target": "_self"
-            },
-            {
-              "title": "表格页面",
-              "href": "list.html",
-              "icon": "fa fa-tachometer",
-              "target": "_self"
-            },
-            {
-              "title": "登录页面",
-              "href": "login.html",
-              "icon": "fa fa-tachometer",
-              "target": "_self"
-            }
-          ]
+          "target": "_self"
         },
         {
           "title": "问题管理",

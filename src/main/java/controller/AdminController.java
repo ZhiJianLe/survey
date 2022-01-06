@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 import service.AdminService;
+import utils.MD5Utils;
 import utils.MapControl;
 
 import java.util.List;
@@ -31,6 +32,7 @@ public class AdminController {
     @PostMapping("/create")
     @ResponseBody
     public Map<String,Object> create(@RequestBody Admin admin){
+        admin.setPassword(MD5Utils.getMD5(admin.getPassword()));
         int code=adminService.create(admin);
         //失败的情况下
         if(code<=0) {
