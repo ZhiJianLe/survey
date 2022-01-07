@@ -290,7 +290,8 @@
                     layer.msg("请选择一行数据查看",{time:1000});
                     return;
                 }
-                if(data[0].url == ""){
+                console.log(data)
+                if(data[0].url == ""||data[0].url==null){
                     layer.msg("请先发布再查看详情",{time:1000});
                     return;
                 }

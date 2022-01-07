@@ -20,38 +20,6 @@
           "href": "survey/list",
           "icon": "fa fa-home",
           "target": "_self"
-        },
-        {
-          "title": "问题管理",
-          "href": "page/menu.html",
-          "icon": "fa fa-window-maximize",
-          "target": "_self"
-        },
-        {
-          "title": "类型管理",
-          "href": "page/setting.html",
-          "icon": "fa fa-gears",
-          "target": "_self"
-        },
-        {
-          "title": "调查统计",
-          "href": "",
-          "icon": "fa fa-calendar",
-          "target": "_self",
-          "child": [
-            {
-              "title": "参与人数统计",
-              "href": "page/form.html",
-              "icon": "fa fa-list-alt",
-              "target": "_self"
-            },
-            {
-              "title": "选项统计",
-              "href": "page/form-step.html",
-              "icon": "fa fa-navicon",
-              "target": "_self"
-            }
-          ]
         }
       ]
     },

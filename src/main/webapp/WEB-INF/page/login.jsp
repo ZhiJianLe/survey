@@ -56,7 +56,7 @@
                     <input type="password" name="password" lay-verify="required|password" placeholder="请录入密码" autocomplete="off" class="layui-input" value="123456">
                 </div>
                 <div class="layui-form-item">
-                    <button class="layui-btn layui-btn layui-btn-normal layui-btn-fluid" lay-submit="" lay-filter="login">登 入</button>
+                    <button class="layui-btn layui-btn layui-btn-normal layui-btn-fluid" lay-submit="" lay-filter="login">登 录</button>
                 </div>
             </form>
         </div>
